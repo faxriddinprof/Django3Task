@@ -1,0 +1,30 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+  <h1>Cats List</h1>
+  {% if auto_list %}
+  <ul>
+    {% for auto in auto_list %}
+      <li>
+          {{ auto.nickname }} ({{ auto.breed }})
+          (<a href="{% url 'cats:auto_update' auto.id %}">Update</a> |
+          <a href="{% url 'cats:auto_delete' auto.id %}">Delete</a>) <br/>
+          {{ auto.weight }} ({{ auto.foods }} foods)
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no cats in the library.</p>
+  {% endif %}
+  <p>
+    {% if make_count > 0 %}
+      <a href="{% url 'cats:auto_create' %}">Add an cat</a>
+    {% else %}
+      Please add a breed before you add an cat.
+    {% endif %}
+  </p>
+  <p>
+  <a href="{% url 'cats:make_list' %}">View breed</a> ({{ make_count }}) | 
+    <a href="{% url 'cats:make_create' %}">Add a breed</a>
+  </p>
+{% endblock %}

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #LOCAL APPS
     "autos",
+    "cats"
 ]
 
 MIDDLEWARE = [

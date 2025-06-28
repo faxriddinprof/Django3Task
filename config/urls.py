@@ -10,4 +10,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),  # Add
     path('',home,name='home'),
     path('autos/', include('autos.urls')),                   # Add
+    path('cats/', include('cats.urls')),
+
 ]

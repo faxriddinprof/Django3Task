@@ -1,0 +1,5 @@
+python -m venv venv
+venv/Scripst/activate
+pip install django
+django-admin startproject config .
+python .\manage.py migrate
